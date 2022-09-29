@@ -19,6 +19,6 @@ public class Restaurante {
     private String nome;
     @OneToMany(cascade = CascadeType.ALL)//Se excluir ou fizer qualquer alteração em Restaurante o Produto será afetado
     private List<Produto> cardapio;//Um restaurante tem vários produtos
-    @Embedded
+    @Embedded//Embedded = De onde vou pegar a classe.
     private Endereco endereco;
 }

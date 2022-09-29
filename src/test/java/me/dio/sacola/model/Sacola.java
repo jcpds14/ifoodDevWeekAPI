@@ -18,14 +18,14 @@ import java.util.List;
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})//Para ignorar alguns erros do Hibernate
 @NoArgsConstructor//Criar um constructor vazio
 public class Sacola {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id //Identificador único de cada objeto
+    @GeneratedValue(strategy = GenerationType.AUTO)//Forma que o Id será gerado, neste caso, auto incremento
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, optional = false) //Um cliente pode ter várias sacolas
     @JsonIgnore
     private Cliente cliente;
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Item> itens;
+    @OneToMany(cascade = CascadeType.ALL)//Se excluir ou fizer qualquer alteração em Restaurante o Produto será afetado
+    private List<Item> itens;//Uma sacola tem vários itens
     private Double valorTotal;
     @Enumerated
     private FormaPagamento FormaPagamento;
