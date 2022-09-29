@@ -11,12 +11,12 @@ import net.minidev.json.annotate.JsonIgnore;
 import javax.persistence.*;
 import java.util.List;
 
-@AllArgsConstructor
-@Builder
-@Data
-@Entity
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-@NoArgsConstructor
+@AllArgsConstructor //Criar um constructor com todos os atributos
+@Builder //Criar um objeto de uma forma simples
+@Data //Para termos os Getters e Setters, além disso os métodos "Eco" e "Hashcode" para fazer comparações
+@Entity //Pra dizer que a Classe seja convertida em uma tabela no banco de dados
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})//Para ignorar alguns erros do Hibernate
+@NoArgsConstructor//Criar um constructor vazio
 public class Sacola {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
