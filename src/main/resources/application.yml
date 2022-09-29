@@ -9,7 +9,7 @@ spring:
   datasource:
     url: jdbc:h2:mem:testdb
     username: jeanc
-    password: 9116
+    password:
     driverClassName: org.h2.Driver
   jpa:
     show-sql: true
